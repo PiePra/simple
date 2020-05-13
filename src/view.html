@@ -14,23 +14,27 @@
   <body>
     <div class="container">
       <div class="row">
-        <div class="col-md-2">
+        <div class="col-2">
           <img src="../assets/img/logo.png" alt="simpleWhatsApp" class="mw-100" width="100px" />
         </div>
-        <div class="col-md-2">
+        <div class="col-2">
           <h1>$Gruppenname</h1>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md4 show-online mt-5 border">
-          <span>&bull; Hans Werner</span>
-          <p>&middot;</p>
-          <p>&middot;</p>
-          <p>&middot;</p>
-          <p>&middot;</p>
-          <p>&middot;</p>
-          <p>&middot;</p>
-          <p>&middot;</p>
+      <div class="row mt-5">
+        <div class="col-8">
+          <div class="coolBorder chatTextArea">Lore Ipsum</div>
+          <div class="input-group mt-3">
+            <textarea class="form-control chatInputArea" aria-label="With textarea"></textarea>
+            <div class="input-group-prepend">
+              <button type="submit" class="input-group-text">With textarea</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-4 coolBorder">
+          <ul>
+            <li>{{ name }}</li>
+          </ul>
         </div>
       </div>
     </div>
