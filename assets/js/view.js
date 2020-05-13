@@ -1,8 +1,15 @@
-const online_status = document.querySelector('#online-status');
+const OnlineStatus = document.querySelector('#OnlineStatus');
+const ChatWindow = document.querySelector('#ChatWindow');
+const Title = document.querySelector('#Title');
 
+function loadAll() {
+    loadOnline();
+    loadChat();
+}
+
+//load online.json
 function loadOnline () {
     const req = new XMLHttpRequest();
-
     req.open("get", "../test/online.json");
     req.onload = () => {
         const json = JSON.parse(req.responseText);
@@ -11,11 +18,23 @@ function loadOnline () {
     req.send();
 }
 
+//load chat.json
+function loadChat () {
+    const req = new XMLHttpRequest();
+
+    req.open("get", "../test/chat.json");
+    req.onload = () => {
+        const json = JSON.parse(req.responseText);
+        populateChat(json);
+    };
+    req.send();
+}
+
 
 function populateOnline(json){
     //purge
-    while (online_status.firstChild){
-        online_status.removeChild(online_status.firstChild);
+    while (OnlineStatus.firstChild){
+        OnlineStatus.removeChild(OnlineStatus.firstChild);
     }
     //populate
     json.forEach((row) => {
@@ -34,8 +53,43 @@ function populateOnline(json){
             default: break;     
         }
 
-        online_status.appendChild(li);
+        OnlineStatus.appendChild(li);
     });
 }
 
-document.addEventListener("DOMContentLoaded", () => {loadOnline(); });
+
+function populateChat(json){
+    Title.textContent = json.group;
+    while (ChatWindow.firstChild){
+        ChatWindow.removeChild(ChatWindow.firstChild);
+    }
+
+    json.chats.forEach( (chat) => {
+        const row = document.createElement("div");
+        row.classList.add("row")
+        const author = document.createElement("div");
+        author.classList.add("col-2");
+        const time = document.createElement("div");
+        time.classList.add("col-3");
+        const message = document.createElement("div");
+        message.classList.add("col-7");
+        const p1 = document.createElement("p");
+        p1.textContent = chat.message;
+        message.appendChild(p1)
+        const p2 = document.createElement("p");
+        p2.textContent = chat.time;
+        time.appendChild(p2);
+        const p3 = document.createElement("p");
+        p3.textContent = chat.author;
+        author.appendChild(p3)
+        row.appendChild(time);
+        row.appendChild(author);
+        row.appendChild(message);
+        ChatWindow.appendChild(row);
+    });
+
+
+}
+
+
+document.addEventListener("DOMContentLoaded", () => {loadAll(); });

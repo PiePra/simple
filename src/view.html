@@ -13,48 +13,33 @@
   </head>
   <body>
     <div class="container">
-      <div class="row mt-4">
+      <div class="row mt-3">
         <div class="col-2">
           <img src="../assets/img/logo.png" alt="simpleWhatsApp" class="mw-100" width="100px" />
         </div>
-        <div class="col-2">
-          <h1>$Gruppenname</h1>
+        <div class="col-6">
+          <h1 id = "Title"></h1>
         </div>
       </div>
-      <div class="row mt-5">
+      <div class="row mt-3">
         <div class="col-8">
-          <div class="coolBorder chatTextArea">
-            <div class="row" name="completeMessage">
-              <div class="col-2">20.04.2021</div>
-              <div class="col-2">Harald</div>
-              <div class="col-8"></div>
-            </div>
-            <div class="row" name="completeMessage">
-              <div class="col-2">Datum</div>
-              <div class="col-2">Name</div>
-              <div class="col-8"></div>
-            </div>
-            <div class="row" name="completeMessage">
-              <div class="col-2">Datum</div>
-              <div class="col-2">Name</div>
-              <div class="col-8">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</div>
-            </div>
-            <div class="row" name="completeMessage">
-              <div class="col-2">Datum</div>
-              <div class="col-2">Name</div>
-              <div class="col-8">Message</div>
+          <div class="coolBorder chatTextArea" id = "ChatWindow">
+            <div class="row">
+<!--               <div class="col-2"></div>
+              <div class="col-2"></div>
+              <div class="col-8"></div> -->
             </div>
           </div>
-          <div class="input-group mt-3">
+          <div class="input-group mt-3 coolBorder2">
             <textarea class="form-control chatInputArea" aria-label="With textarea"></textarea>
             <div class="input-group-prepend">
-              <button type="submit" class="input-group-text">With textarea</button>
+              <button type="submit" class="input-group-text">Senden</button>
             </div>
           </div>
         </div>
         <div class="col-4 coolBorder">
-          <ul id = "online-status">
-            <li>{{ name }}</li>
+          <ul id = "OnlineStatus">
+            <!-- <li>{{ name }}</li> -->
           </ul>
         </div>
       </div>

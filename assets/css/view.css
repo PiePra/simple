@@ -15,3 +15,7 @@
   border-radius: 15px;
   border: 4px solid grey !important;
 }
+
+input:focus{
+    outline: none; !important
+}

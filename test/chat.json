@@ -1,0 +1,14 @@
+{"group" : "Testgruppe",
+     "chats": [
+         {  
+            "author" : "Pierre", 
+            "time" : "12.04.2020 - 04:32",
+            "message" : "Hallo Welt!"
+         },
+         {
+            "author" : "Dieter",
+            "time" : "12.04.2020 - 04:32",
+            "message" : "Hallo Welt2!"
+         }
+        ]
+}
