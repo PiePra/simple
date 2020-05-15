@@ -72,14 +72,16 @@ function populateChat(json){
         const time = document.createElement("div");
         time.classList.add("col-3", "w-100", "mx-2");
         const message = document.createElement("div");
-        message.classList.add("col-6", "w-100", "mx-2");
+        message.classList.add("col-11", "w-100", "mx-2");
         const p1 = document.createElement("p");
         p1.textContent = chat.message;
         message.appendChild(p1)
         const p2 = document.createElement("p");
         p2.textContent = chat.time;
+        p2.style.color = "blue";
         time.appendChild(p2);
         const p3 = document.createElement("p");
+        p3.style.color = "blue";
         p3.textContent = chat.author;
         author.appendChild(p3)
         row.appendChild(time);
