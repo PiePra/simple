@@ -68,11 +68,11 @@ function populateChat(json){
         const row = document.createElement("div");
         row.classList.add("row")
         const author = document.createElement("div");
-        author.classList.add("col-2");
+        author.classList.add("col-2", "w-100", "mx-2");
         const time = document.createElement("div");
-        time.classList.add("col-3");
+        time.classList.add("col-3", "w-100", "mx-2");
         const message = document.createElement("div");
-        message.classList.add("col-7");
+        message.classList.add("col-6", "w-100", "mx-2");
         const p1 = document.createElement("p");
         p1.textContent = chat.message;
         message.appendChild(p1)
