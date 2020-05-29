@@ -3,10 +3,11 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
+$gid = 1;//$_POST['GID'];
+
 $db = new SQLite3 ('test.sqlite');
 
-
-$messages = $db->query("select * from message");
+$messages = $db->query("select * from message where fk_gruppe = ". $gid);
 $row = $messages->fetchArray(SQLITE3_ASSOC);
 if ( $row == false){
     http_response_code(404);
@@ -15,6 +16,7 @@ if ( $row == false){
         array("message" => "No Messages found.")
     );
 } else {
+    http_response_code(200);
     do { 
         echo json_encode($row);
     }    
