@@ -1,0 +1,12 @@
+[
+    { "name" : "Dick", "status": 0 },
+    { "name" : "Donna", "status": 0 },
+    { "name" : "Donald", "status": 0},
+    { "name" : "Daisy", "status": 0 }, 
+    { "name" : "Don", "status": 1 }, 
+    { "name" : "Dick", "status": 1 },
+    { "name" : "Donna", "status": 1 }, 
+    { "name" : "Don", "status": 2 }, 
+    { "name" : "Donald", "status": 2 },
+    { "name" : "Daisy", "status": 2 }
+]
