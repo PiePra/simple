@@ -2,12 +2,12 @@
 // required headers
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
-
+session_start();
 $gid = $_SESSION['GID'];
 
 $db = new SQLite3 ('test.sqlite');
-
-$messages = $db->query("select name, text, sent_at from nachricht join nutzer on fk_autor = UID where UID = ". $gid) ;  
+//
+$messages = $db->query("select nachrichtentext, nutzername, sent_at from nachricht n join nutzer u on fk_autor = UID where n.fk_gruppe = ". $gid . " order by n.sent_at DESC") ;  
 $row = $messages->fetchArray(SQLITE3_ASSOC);
 $output = array();
 if ( $row == false){
@@ -19,8 +19,8 @@ if ( $row == false){
 } else {
 
     do { 
-        $temp['text'] = $row['text'];
-        $temp['author'] = $row['name'];
+        $temp['message'] = $row['nachrichtentext'];
+        $temp['author'] = $row['nutzername'];
         $temp['time'] = $row['sent_at'];
 
         //var_dump($temp);

@@ -36,12 +36,16 @@
               <div class="col-8"></div>
             </div>
           </div>
-          <div class="input-group mt-3">
-            <textarea class="form-control chatInputArea" aria-label="With textarea"></textarea>
-            <div class="input-group-prepend">
-              <button type="submit" class="btn-primary">Senden</button>
-            </div>
-          </div>
+            <form action='../../backend/postMessage.php' method='post'> 
+              <div class="row">
+                <div class='col-8 mt-1 mx-1'>
+                  <textarea class="form-control chatInputArea" aria-label="With textarea" name="message"></textarea>
+                </div>
+                <div class='col-2 mt-4'>
+                    <button type="submit" class="btn-primary">Senden</button>
+                </div>
+              </div>      
+            </form>
         </div>
         <div class="col-4 coolBorder">
           <ul id = "OnlineStatus">

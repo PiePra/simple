@@ -1,6 +1,5 @@
 const OnlineStatus = document.querySelector('#OnlineStatus');
 const ChatWindow = document.querySelector('#ChatWindow');
-//const Title = document.querySelector('#Title');
 
 function loadAll() {
     loadOnline();
@@ -22,7 +21,7 @@ function loadOnline () {
 function loadChat () {
     const req = new XMLHttpRequest();
 
-    req.open("get", "../test/chat.json");
+    req.open("get", "../../backend/getMessage.php");
     req.onload = () => {
         const json = JSON.parse(req.responseText);
         populateChat(json);
@@ -64,7 +63,7 @@ function populateChat(json){
         ChatWindow.removeChild(ChatWindow.firstChild);
     }
 
-    json.chats.forEach( (chat) => {
+    json.forEach( (chat) => {
         const row = document.createElement("div");
         row.classList.add("row")
         const author = document.createElement("div");
@@ -90,6 +89,5 @@ function populateChat(json){
         ChatWindow.appendChild(row);
     });
 }
-
 
 document.addEventListener("DOMContentLoaded", () => {loadAll(); });
