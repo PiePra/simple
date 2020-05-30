@@ -11,6 +11,3 @@
   border: 1px solid grey !important;
 }
 
-input:focus{
-    outline: none; !important
-}

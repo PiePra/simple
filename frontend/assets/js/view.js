@@ -5,7 +5,7 @@ function loadAll() {
     loadOnline();
     loadChat();
     periodicChat();
-    periodicOnline();
+    periodicOnline();  
 }
 
 //load online.json
