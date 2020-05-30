@@ -3,7 +3,7 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
-$gruppe = 'pierre2';   //$_POST['username'];
+$gruppe = 'pierre6';   //$_POST['username'];
 $user = 'pierre2';     //$_POST['gruppennamen'];
 
 $db = new SQLite3 ('test.sqlite');
@@ -27,8 +27,8 @@ if ($row) {
         $output['UID'] = $row['UID'];
     }
     elseif ($time > 60) {
-        $db->query("update nutzer set fk_gruppe = ". $output['GID'] . " where UID = ". $output['UID']);
-        $result = $db->query("select UID from nutzer where nutzername = ". $user );
+        $db->query("update nutzer set fk_gruppe = ". $output['GID'] . " where UID = ". $row['UID']);
+        $result = $db->query("select UID from nutzer where nutzername = '". $user ."'");
         $row = $result->fetchArray(SQLITE3_ASSOC);
         $output['UID'] = $row['UID'];
     }
