@@ -1,8 +1,14 @@
+<?php
+  session_start();
+  if ((!$_SESSION['UID']) && (!$_SESSION['GID']) && (!$_SESSION['gruppenname'])) {
+    header("Location: index.html");
+  }
+?>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>$Gruppenname</title>
+    <title><?php echo $_SESSION['gruppenname']; ?></title>
     <link href="../assets/css/view.css" rel="stylesheet" type="text/css" />
     <link
       rel="stylesheet"
@@ -18,7 +24,7 @@
           <img src="../assets/img/logo.png" alt="simpleWhatsApp" class="mw-100" width="100px" />
         </div>
         <div class="col-6">
-          <h1 id = "Title"></h1>
+          <h1><?php echo $_SESSION['gruppenname']; ?></h1>
         </div>
       </div>
       <div class="row mt-3">

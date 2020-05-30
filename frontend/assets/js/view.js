@@ -1,6 +1,6 @@
 const OnlineStatus = document.querySelector('#OnlineStatus');
 const ChatWindow = document.querySelector('#ChatWindow');
-const Title = document.querySelector('#Title');
+//const Title = document.querySelector('#Title');
 
 function loadAll() {
     loadOnline();
@@ -10,7 +10,7 @@ function loadAll() {
 //load online.json
 function loadOnline () {
     const req = new XMLHttpRequest();
-    req.open("get", "../test/online.json");
+    req.open("get", "../../backend/getOnline.php");
     req.onload = () => {
         const json = JSON.parse(req.responseText);
         populateOnline(json);
@@ -39,7 +39,7 @@ function populateOnline(json){
     //populate
     json.forEach((row) => {
         const li = document.createElement("li")
-        li.textContent = row.name;
+        li.textContent = row.nutzername;
         switch(row.status){
             case 0:
                 li.style.color = "green"; 
@@ -59,7 +59,7 @@ function populateOnline(json){
 
 
 function populateChat(json){
-    Title.textContent = json.group;
+    //Title.textContent = json.group;
     while (ChatWindow.firstChild){
         ChatWindow.removeChild(ChatWindow.firstChild);
     }
@@ -89,8 +89,6 @@ function populateChat(json){
         row.appendChild(message);
         ChatWindow.appendChild(row);
     });
-
-
 }
 
 
