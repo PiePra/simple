@@ -3,11 +3,11 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
-$gid = 1;//$_POST['GID'];
+$gid = $_SESSION['GID'];
 
 $db = new SQLite3 ('test.sqlite');
 
-$messages = $db->query("select name, lastActive from nutzer where fk_gruppe = ". $gid ." order by lastActive DESC");
+$messages = $db->query("select nutzername, lastActive from nutzer where fk_gruppe = ". $gid ." order by lastActive DESC");
 $row = $messages->fetchArray(SQLITE3_ASSOC);
 if ( $row == false){
     http_response_code(404);
@@ -18,7 +18,7 @@ if ( $row == false){
 } else {
     $output = array();
     do { 
-            $temp['name'] = $row['name'];
+            $temp['nutzername'] = $row['nutzername'];
             $time =  ((gmdate(time()) - gmdate(strtotime($row['lastActive']))) /60) - 120;
             if ($time > 15){
                 $status = 2;

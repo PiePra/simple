@@ -3,7 +3,7 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
-$gid = 1;//$_POST['GID'];
+$gid = $_SESSION['GID'];
 
 $db = new SQLite3 ('test.sqlite');
 

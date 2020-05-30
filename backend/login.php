@@ -3,13 +3,14 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
-$gruppe = 'pierre6';   //$_POST['username'];
-$user = 'pierre2';     //$_POST['gruppennamen'];
+$gruppe = $_POST['gruppenname'];
+$user = $_POST['nutzername'];
 
 $db = new SQLite3 ('test.sqlite');
 $output = array();
 $result = $db->query("select GID from gruppe where gruppenname = '". $gruppe ."'" );
 $row = $result->fetchArray(SQLITE3_ASSOC);
+
 if ($row) {
     $output['GID'] = $row['GID'];
 }
@@ -39,7 +40,7 @@ if ($row) {
         echo json_encode(
             array("message" => "User active in another group right now, change username or wait " . $wait . " minutes to login.")
         );
-        exit();
+        die();
     }
 }
 else{
@@ -49,8 +50,15 @@ else{
     $output['UID'] = $id['UID'];
 }
 
-http_response_code(200);
-echo json_encode($output);
+session_start();
+$_SESSION['UID'] = $output['UID'];
+$_SESSION['GID'] = $output['GID'];
+$_SESSION['gruppenname'] = $gruppe;
+var_dump($_SESSION);
+//header("Location: ../frontend/src/view.html");
+die();
+
+
 
 
 

@@ -31,18 +31,18 @@
         </div>
         <div class="col"></div>
       </div>
-      <form action="view.html">
+      <form action="../../backend/login.php" method="post">
         <div class="row mt-5">
           <div class="col-sm">
-            <div class="mx-3 mb-3">
+            <div class="mx-3 mb-3" id = "login">
               <label for="inputUser" class="sr-only">Username</label>
-              <input type="text" class="form-control" id="inputUser" placeholder="Username" />
+              <input type="text" class="form-control" id="inputUser" name="nutzername" placeholder="Username" />
             </div>
           </div>
           <div class="col-sm">
             <div class="mx-3 mb-3">
               <label for="inputGroup" class="sr-only">Groupname</label>
-              <input type="text" class="form-control" id="inputGroup" placeholder="Groupname" />
+              <input type="text" class="form-control" id="inputGroup" name="gruppenname" placeholder="Groupname" />
             </div>
           </div>
           <div class="col-sm">

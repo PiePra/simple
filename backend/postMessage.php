@@ -3,9 +3,9 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
-$fk_gruppe = 1;//$_POST['GID'];
+$fk_gruppe = $_SESSION['GID'];
 $message = "test23"; //$_POST['message];
-$fk_autor = 1;//$_POST['UID'];
+$fk_autor = $_SESSION['UID'];
 
 $db = new SQLite3 ('test.sqlite');
 
