@@ -1,11 +1,11 @@
 <?php 
 //create schema
 $db = new SQLite3 ('test.sqlite');
-$db->exec("CREATE TABLE nutzer (UID INTEGER PRIMARY KEY AUTOINCREMENT, name Text NOT NULL UNIQUE, lastActive Datetime, fk_gruppe Integer)");
+$db->exec("CREATE TABLE nutzer (UID INTEGER PRIMARY KEY AUTOINCREMENT, nutzername Text NOT NULL UNIQUE, lastActive Datetime, fk_gruppe Integer)");
 
-$db->exec("CREATE TABLE gruppe (GID INTEGER PRIMARY KEY AUTOINCREMENT, name Text NOT NULL UNIQUE, created Datetime)");
+$db->exec("CREATE TABLE gruppe (GID INTEGER PRIMARY KEY AUTOINCREMENT, gruppenname Text NOT NULL UNIQUE, created Datetime)");
 
-$db->exec("CREATE TABLE nachricht (MID Integer PRIMARY KEY AUTOINCREMENT, text Text, fk_autor Integer, fk_gruppe Integer, sent_at Datetime)");
+$db->exec("CREATE TABLE nachricht (MID Integer PRIMARY KEY AUTOINCREMENT, nachrichtentext Text, fk_autor Integer, fk_gruppe Integer, sent_at Datetime)");
 
 //
 $db->exec("CREATE TRIGGER nachrichtLimit 
