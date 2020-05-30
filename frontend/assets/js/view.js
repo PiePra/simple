@@ -4,6 +4,8 @@ const ChatWindow = document.querySelector('#ChatWindow');
 function loadAll() {
     loadOnline();
     loadChat();
+    periodicChat();
+    periodicOnline();
 }
 
 //load online.json
@@ -89,5 +91,27 @@ function populateChat(json){
         ChatWindow.appendChild(row);
     });
 }
+
+
+async function periodicChat(){
+    while(true){
+        await new Promise(resolve=> {
+            setTimeout(() => { resolve(loadChat());
+             }, 3000);
+        });
+    }
+
+}
+
+async function periodicOnline(){
+    while(true){
+        await new Promise(resolve=> {
+            setTimeout(() => { resolve(loadOnline());
+             }, 5000);
+        });
+    }
+
+}
+
 
 document.addEventListener("DOMContentLoaded", () => {loadAll(); });
