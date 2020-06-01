@@ -38,7 +38,8 @@ if ($row) {
         // user currently active in another group
         $wait = 60 - $time;
         echo "User active in another group right now, change username or wait " . $wait . " minutes to login.";
-        echo '<meta http-equiv="refresh" content="5;url=http://www.domain.com/">';
+        <meta http-equiv="refresh" content="5;url=http://www.domain.com/">
+        die();
     }
 }
 else{
