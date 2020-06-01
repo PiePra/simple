@@ -53,7 +53,6 @@ session_start();
 $_SESSION['UID'] = $output['UID'];
 $_SESSION['GID'] = $output['GID'];
 $_SESSION['gruppenname'] = $gruppe;
-var_dump($_SESSION);
 header("Location: view.php");
 die();
 
