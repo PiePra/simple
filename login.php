@@ -37,10 +37,9 @@ if ($row) {
         http_response_code(404);
         // user currently active in another group
         $wait = 60 - $time;
-        echo json_encode(
-            array("message" => "User active in another group right now, change username or wait " . $wait . " minutes to login.")
-        );
-        exit();
+        echo "User active in another group right now, change username or wait " . $wait . " minutes to login.";
+        sleep(5);
+        header("Location: index.html");
     }
 }
 else{
@@ -55,7 +54,7 @@ $_SESSION['UID'] = $output['UID'];
 $_SESSION['GID'] = $output['GID'];
 $_SESSION['gruppenname'] = $gruppe;
 var_dump($_SESSION);
-header("Location: ../frontend/src/view.php");
+header("Location: view.php");
 die();
 
 

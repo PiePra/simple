@@ -1,6 +1,6 @@
 <?php 
 //create schema
-$db = new SQLite3 ('test.sqlite');
+$db = new SQLite3 ('production.sqlite');
 $db->exec("CREATE TABLE nutzer (UID INTEGER PRIMARY KEY AUTOINCREMENT, nutzername Text NOT NULL UNIQUE, lastActive Datetime, fk_gruppe Integer)");
 
 $db->exec("CREATE TABLE gruppe (GID INTEGER PRIMARY KEY AUTOINCREMENT, gruppenname Text NOT NULL UNIQUE, created Datetime)");

@@ -11,7 +11,7 @@ function loadAll() {
 //load online.json
 function loadOnline () {
     const req = new XMLHttpRequest();
-    req.open("get", "../../backend/getOnline.php");
+    req.open("get", "getOnline.php");
     req.onload = () => {
         const json = JSON.parse(req.responseText);
         populateOnline(json);
@@ -23,7 +23,7 @@ function loadOnline () {
 function loadChat () {
     const req = new XMLHttpRequest();
 
-    req.open("get", "../../backend/getMessage.php");
+    req.open("get", "getMessage.php");
     req.onload = () => {
         const json = JSON.parse(req.responseText);
         populateChat(json);
