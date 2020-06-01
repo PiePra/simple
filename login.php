@@ -6,7 +6,7 @@ header("Content-Type: application/json; charset=UTF-8");
 $gruppe = $_POST['gruppenname'];
 $user = $_POST['nutzername'];
 
-$db = new SQLite3 ('test.sqlite');
+$db = new SQLite3 ('production.sqlite');
 $output = array();
 $result = $db->query("select GID from gruppe where gruppenname = '". $gruppe ."'" );
 $row = $result->fetchArray(SQLITE3_ASSOC);

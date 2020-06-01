@@ -26,11 +26,7 @@ $db->exec("CREATE TRIGGER updateLastActive After INSERT ON nachricht
             BEGIN
                 update nutzer set lastActive = CURRENT_TIMESTAMP where UID = NEW.fk_autor;
             END");
-$db->exec("insert into nachricht values (1, 'Hallo', 1, 1, CURRENT_TIMESTAMP)");
-$db->exec("insert into nutzer values (1, 'Hans', CURRENT_TIMESTAMP, 1)");
-$db->exec("insert into nutzer values (2, 'Dieter', CURRENT_TIMESTAMP, 1)");
-$db->exec("insert into nachricht values (2, 'Hallo zwei', 1, 1, CURRENT_TIMESTAMP)");
 
-echo "gutgut";
+echo "database created";
 
 ?>

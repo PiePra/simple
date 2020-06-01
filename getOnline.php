@@ -4,7 +4,7 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 session_start();
 $gid = $_SESSION['GID'];
-$db = new SQLite3 ('test.sqlite');
+$db = new SQLite3 ('production.sqlite');
 
 $messages = $db->query("select nutzername, lastActive from nutzer where fk_gruppe = ". $gid ." order by lastActive DESC");
 $row = $messages->fetchArray(SQLITE3_ASSOC);

@@ -5,7 +5,7 @@ header("Content-Type: application/json; charset=UTF-8");
 session_start();
 $gid = $_SESSION['GID'];
 
-$db = new SQLite3 ('test.sqlite');
+$db = new SQLite3 ('production.sqlite');
 //
 $messages = $db->query("select nachrichtentext, nutzername, sent_at from nachricht n join nutzer u on fk_autor = UID where n.fk_gruppe = ". $gid . " order by n.sent_at DESC") ;  
 $row = $messages->fetchArray(SQLITE3_ASSOC);
