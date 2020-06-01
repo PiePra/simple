@@ -21,7 +21,7 @@
     <div class="container">
       <div class="row mt-3">
         <div class="col-2">
-          <img src="../assets/img/logo.png" alt="simpleWhatsApp" class="mw-100" width="100px" />
+          <a href="index.html"><img src="../assets/img/logo.png" alt="simpleWhatsApp" class="mw-100" width="100px" /></a>
         </div>
         <div class="col-6">
           <h1><?php echo $_SESSION['gruppenname']; ?></h1>
