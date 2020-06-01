@@ -1,8 +1,6 @@
 <?php
-// required headers
 session_start();
-header("Access-Control-Allow-Origin: *");
-header("Content-Type: application/json; charset=UTF-8");
+
 
 $fk_gruppe = $_SESSION['GID'];
 $message = $_POST['message'];
