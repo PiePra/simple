@@ -5,7 +5,7 @@ $db->exec("CREATE TABLE nutzer (UID INTEGER PRIMARY KEY AUTOINCREMENT, nutzernam
 
 $db->exec("CREATE TABLE gruppe (GID INTEGER PRIMARY KEY AUTOINCREMENT, gruppenname Text NOT NULL UNIQUE, created Datetime)");
 
-$db->exec("CREATE TABLE nachricht (MID Integer PRIMARY KEY AUTOINCREMENT, nachrichtentext NOT NULL Text, fk_autor Integer, fk_gruppe Integer, sent_at Datetime)");
+$db->exec("CREATE TABLE nachricht (MID Integer PRIMARY KEY AUTOINCREMENT, nachrichtentext Text NOT NULL, fk_autor Integer, fk_gruppe Integer, sent_at Datetime)");
 
 //
 $db->exec("CREATE TRIGGER nachrichtLimit 
