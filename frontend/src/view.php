@@ -39,7 +39,7 @@
             <form action='../../backend/postMessage.php' method='post'> 
               <div class="row">
                 <div class='col-8 mt-1 mx-1'>
-                  <textarea class="form-control chatInputArea" aria-label="With textarea" name="message"></textarea>
+                  <textarea class="form-control chatInputArea" aria-label="With textarea" name="message" required></textarea>
                 </div>
                 <div class='col-2 mt-4'>
                     <button type="submit" class="btn-primary">Senden</button>
