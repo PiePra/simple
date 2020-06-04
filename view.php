@@ -1,6 +1,8 @@
 <?php
+  #check if session exists
   session_start();
   if ((!$_SESSION['UID']) && (!$_SESSION['GID']) && (!$_SESSION['gruppenname'])) {
+    #if no session exists navigate to index.html to enforce login
     header("Location: index.html");
   }
 ?>
@@ -10,11 +12,7 @@
     <meta charset="UTF-8" />
     <title><?php echo $_SESSION['gruppenname']; ?></title>
     <link href="view.css" rel="stylesheet" type="text/css" />
-    <link
-      rel="stylesheet"
-      href="bootstrap.min.css"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="bootstrap.min.css" crossorigin="anonymous"/>
   </head>
   <body>
     <div class="container">
@@ -23,7 +21,8 @@
           <a href="index.html"><img src="logo.png" alt="simpleWhatsApp" class="mw-100" width="100px" /></a>
         </div>
         <div class="col-6">
-          <h1><?php echo $_SESSION['gruppenname']; ?></h1>
+          <h1>
+            <?php echo $_SESSION['gruppenname']; ?></h1>
         </div>
       </div>
       <div class="row mt-3">
