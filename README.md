@@ -1,11 +1,7 @@
 # simpleChat
 pages: https://piepra.github.io/simpleChat/
 
-This is the frontend of a simple Chat App using HTML5, Bootstrap-CSS and AJAX.
-Contents loaded dynamically from json files
+This is  a simple Chat App using HTML5, Bootstrap-CSS, AJAX and PHP.
 
-![Image of Frontend](doku/frontend.png)
 
-## Work in Progress
-create Backend API
 

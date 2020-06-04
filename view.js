@@ -1,6 +1,9 @@
+//get OnlineStatus Window
 const OnlineStatus = document.querySelector('#OnlineStatus');
+//get Chat Window 
 const ChatWindow = document.querySelector('#ChatWindow');
 
+//load all Functions after document loaded
 function loadAll() {
     loadOnline();
     loadChat();
@@ -8,24 +11,26 @@ function loadAll() {
     periodicOnline();  
 }
 
-//load online.json
+//request json return from getOnline.php
 function loadOnline () {
     const req = new XMLHttpRequest();
-    req.open("get", "../../backend/getOnline.php");
+    req.open("get", "getOnline.php");
     req.onload = () => {
         const json = JSON.parse(req.responseText);
+        //populate Online Status Window
         populateOnline(json);
     };
     req.send();
 }
 
-//load chat.json
+//request json return from getMessages.php
 function loadChat () {
     const req = new XMLHttpRequest();
 
-    req.open("get", "../../backend/getMessage.php");
+    req.open("get", "getMessage.php");
     req.onload = () => {
         const json = JSON.parse(req.responseText);
+        //populate Messages Window
         populateChat(json);
     };
     req.send();
@@ -33,14 +38,16 @@ function loadChat () {
 
 
 function populateOnline(json){
-    //purge
+    //purge existing elements
     while (OnlineStatus.firstChild){
         OnlineStatus.removeChild(OnlineStatus.firstChild);
     }
-    //populate
+    //populate with new elements
     json.forEach((row) => {
+        //add every returned Online User
         const li = document.createElement("li")
         li.textContent = row.nutzername;
+        //change color based on the given Code
         switch(row.status){
             case 0:
                 li.style.color = "green"; 
@@ -53,20 +60,21 @@ function populateOnline(json){
                 break;
             default: break;     
         }
-
         OnlineStatus.appendChild(li);
     });
 }
 
 
 function populateChat(json){
-    //Title.textContent = json.group;
+    //purge existing elements
     while (ChatWindow.firstChild){
         ChatWindow.removeChild(ChatWindow.firstChild);
     }
-
+    //populate with new elements
     json.forEach( (chat) => {
+        //add every returned Messages author, timestamp and messagetext
         const row = document.createElement("div");
+        //add bootstrap classes
         row.classList.add("row")
         const author = document.createElement("div");
         author.classList.add("col-2", "w-100", "mx-2");
@@ -92,7 +100,7 @@ function populateChat(json){
     });
 }
 
-
+//asynchronous messages reload every 3 seconds
 async function periodicChat(){
     while(true){
         await new Promise(resolve=> {
@@ -103,6 +111,7 @@ async function periodicChat(){
 
 }
 
+//asynchronous online status reload every 5 seconds
 async function periodicOnline(){
     while(true){
         await new Promise(resolve=> {
@@ -113,5 +122,5 @@ async function periodicOnline(){
 
 }
 
-
+//load js after document loaded
 document.addEventListener("DOMContentLoaded", () => {loadAll(); });

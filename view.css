@@ -1,10 +1,13 @@
+/* let exceeding messages create a scroll bar*/
 .chatTextArea {
   height: 75vh;
   overflow: auto;    
 }
+/* removes the resize button of textarea*/
 .chatInputArea {
   resize: none;
 }
+/* default border of web application*/
 .coolBorder {
   border-radius: 15px;
   padding: 20px;
