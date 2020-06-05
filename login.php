@@ -41,7 +41,6 @@ if ($row) {
         http_response_code(404);
         $wait = 60 - $time;
         echo "User active in another group right now, change username or wait " . $wait . " minutes to login.";
-        <meta http-equiv="refresh" content="5;url=http://www.domain.com/">
         die();
     }
 }

@@ -36,7 +36,6 @@ function loadChat () {
     req.send();
 }
 
-
 function populateOnline(json){
     //purge existing elements
     while (OnlineStatus.firstChild){
@@ -119,7 +118,6 @@ async function periodicOnline(){
              }, 5000);
         });
     }
-
 }
 
 //load js after document loaded
